@@ -27,10 +27,7 @@ describe('Checkout items', () => {
         //proceed to submit the list item and shipping info
         cy.get("#submitOrderBtn").click()
 
-        /*
-            since "#message" element is present in shipping form page and success purchase page, the only thing we have to check is the text inside the element. 
-            In this case, we make sure that "#message" element contain text that indicate the purchase is successfully completed
-        */
+        //Make sure the message is not empty
         cy.get("#message").should('exist')
     })
 
@@ -47,11 +44,7 @@ describe('Checkout items', () => {
         //proceed to submit the list item and shipping info
         cy.get("#submitOrderBtn").click()
 
-
-        /*
-            since "#message" element is present in shipping form page and success purchase page, the only thing we have to check is the text inside the element. 
-            In this case, we make sure that "#message" element did not contain any text / empty that indicate the purchase is failed 
-        */
+        //since no item added to cart, we expect that we didn't redirect to success purchase page (can use either "should('have.value','')" or "should('be.empty')")
         cy.get("#message").should('be.empty')
     })
 })
@@ -86,10 +79,7 @@ describe('Shipping form', () => {
         //proceed to submit the list item and shipping info
         cy.get("#submitOrderBtn").click()
 
-        /*
-            since "#message" element is present in shipping form page and success purchase page, the only thing we have to check is the text inside the element. 
-            In this case, we make sure that "#message" element did not contain any text / empty that indicate the purchase is failed 
-        */
+        //since shipping info is empty, we expect that we didn't redirect to success purchase page (can use either "should('have.value','')" or "should('be.empty')")
         cy.get("#message").should('have.value', '')
     })
 
@@ -110,10 +100,7 @@ describe('Shipping form', () => {
         //proceed to submit the list item and shipping info
         cy.get("#submitOrderBtn").click()
 
-        /*
-            since "#message" element is present in shipping form page and success purchase page, the only thing we have to check is the text inside the element. 
-            In this case, we make sure that "#message" element did not contain any text / empty that indicate the purchase is failed 
-        */
+        //since "City" is empty, we expect that we didn't redirect to success purchase page (can use either "should('have.value','')" or "should('be.empty')")
         cy.get("#message").should('have.value', '')
     })
 
@@ -134,10 +121,7 @@ describe('Shipping form', () => {
         //proceed to submit the list item and shipping info
         cy.get("#submitOrderBtn").click()
 
-        /*
-            since "#message" element is present in shipping form page and success purchase page, the only thing we have to check is the text inside the element. 
-            In this case, we make sure that "#message" element did not contain any text / empty that indicate the purchase is failed 
-        */
+        //since "Street" is empty, we expect that we didn't redirect to success purchase page (can use either "should('have.value','')" or "should('be.empty')")
         cy.get("#message").should('have.value', '')
     })
 
@@ -168,10 +152,7 @@ describe('Shipping form', () => {
         //proceed to submit the list item and shipping info
         cy.get("#submitOrderBtn").click()
 
-        /*
-            since "#message" element is present in shipping form page and success purchase page, the only thing we have to check is the text inside the element. 
-            In this case, we make sure that "#message" element did not contain any text / empty that indicate the purchase is failed 
-        */
+        //since "Phone" is empty, we expect that we didn't redirect to success purchase page (can use either "should('have.value','')" or "should('be.empty')")
         cy.get("#message").should('have.value', '')
     })
 
@@ -192,10 +173,7 @@ describe('Shipping form', () => {
         //proceed to submit the list item and shipping info
         cy.get("#submitOrderBtn").click()
 
-        /*
-            since "#message" element is present in shipping form page and success purchase page, the only thing we have to check is the text inside the element. 
-            In this case, we make sure that "#message" element did not contain any text / empty that indicate the purchase is failed 
-        */
+        //since "Region" is empty, we expect that we didn't redirect to success purchase page (can use either "should('have.value','')" or "should('be.empty')")
         cy.get("#message").should('be.empty')
     })
 })
