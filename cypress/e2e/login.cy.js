@@ -15,6 +15,6 @@ describe('Attempt to failed login', () => {
       cy.visit('https://qa-practice.netlify.app/auth_ecommerce')
 
       cy.login("Rio_ferdinan@gmail.com","vlks3345")
-      cy.get("div.alert#message").contains("Bad credentials! Please try again! Make sure that you've registered.")
+      cy.get("div.alert#message", {setTimeout : 5000}).contains("Bad credentials! Please try again! Make sure that you've registered.")
     })
 })
